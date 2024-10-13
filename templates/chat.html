@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with GPT-4All</title>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Chat with GPT-4All</h1>
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type your message here...">
+        <button id="send-btn">Send</button>
+    </div>
+
+    <script>
+        document.getElementById('send-btn').onclick = function() {
+            var userInput = document.getElementById('user-input').value;
+            document.getElementById('chat-box').innerHTML += `<div>User: ${userInput}</div>`;
+            document.getElementById('user-input').value = '';
+
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({ 'user_input': userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('chat-box').innerHTML += `<div>GPT-4All: ${data.response}</div>`;
+            });
+        };
+    </script>
+</body>
+</html>

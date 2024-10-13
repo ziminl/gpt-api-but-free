@@ -11,3 +11,5 @@ with model.chat_session():
     print(model.generate("How can I run LLMs efficiently on my laptop?", max_tokens=1024))
 ```
 
+
+local docs folder (need to set) for own use

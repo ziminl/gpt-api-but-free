@@ -16,7 +16,8 @@ def read_files_in_dir(directory, model):
                     full_content += content
             except Exception as e:
                 print(f"Could not read file {file_path}: {e}")
-    ask = " explain this code"
+    ask = "edit this code. add special functions, give me only code"
+    #ask = " explain this code"
     text_to_ask = full_content + ask
     response = model.generate(text_to_ask)
     print(f"gpt response :\n{response}\n")

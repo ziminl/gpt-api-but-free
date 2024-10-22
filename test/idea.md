@@ -8,6 +8,13 @@
 3. responce and change file
 
 
+pass over this
+
+https://github.com/nomic-ai/gpt4all/issues/2450
+
+
+
+
 
 
 

@@ -17,3 +17,9 @@ with model.chat_session():
 
 
 local docs folder (need to set) for own use
+
+
+
+#project
+
+https://github.com/ziminl/gpt-api-but-free/blob/main/test/idea.md

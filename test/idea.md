@@ -8,7 +8,7 @@
 3. responce and change file
 
 
-pass over this
+pass over this (research)
 
 https://github.com/nomic-ai/gpt4all/issues/2450
 

@@ -3,7 +3,7 @@
 
 1. file read
 
-2. & with {guided prompt} send to gpt4all
+2. with {guided prompt} send to gpt4all
 
 3. responce and change file
 

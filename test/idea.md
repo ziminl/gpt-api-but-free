@@ -1,9 +1,11 @@
 #multiple file to text + prompt
 
 
-1. file read & send to gpt4all
+1. file read
 
-2. 
+2. & with {guided prompt} send to gpt4all
+
+3. responce and change file
 
 
 

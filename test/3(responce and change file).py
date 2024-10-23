@@ -2,8 +2,6 @@ import os
 from gpt4all import GPT4All
 
 def read_files_in_dir(directory, model):
-    results = []  
-    full_content = ""
     for dirpath, dirnames, filenames in os.walk(directory):
         for filename in filenames:
             file_path = os.path.join(dirpath, filename)
@@ -12,16 +10,19 @@ def read_files_in_dir(directory, model):
                 with open(file_path, 'r', encoding='utf-8') as file:
                     content = file.read()
                     print(f"Content:\n{content}\n")
-                    results.append(content)  
-                    full_content += content
-            except Exception as e:
-                print(f"Could not read file {file_path}: {e}")
-    ask = "edit this code. add special functions, give me only code" #change to input
-    text_to_ask = full_content + ask
-    response = model.generate(text_to_ask)
-    print(f"gpt response :\n{response}\n")
 
-model_dir = r'C:\Users\{username}\AppData\Local\nomic.ai\GPT4All\Meta-Llama-3-8B-Instruct.Q4_0.gguf'
+                ask = "fix the code plz."
+                text_to_ask = content + ask +"print code only
+                response = model.generate(text_to_ask)
+                print(f"Response from GPT-4All:\n{response}\n")
+
+                with open(file_path, 'w', encoding='utf-8') as file:
+                    file.write(response)
+
+            except Exception as e:
+                print(f"Could not process file {file_path}: {e}")
+
+model_dir = r'C:\Users\{username}\AppData\Local\nomic.ai\GPT4All\Meta-Llama-3-8B-Instruct.Q4_0.gguf' 
 model = GPT4All(model_dir)
 
 input_dir = input("dir input: ")
